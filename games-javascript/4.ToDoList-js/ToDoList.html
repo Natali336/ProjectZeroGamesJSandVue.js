@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+   <style>
+    .style-border {
+            position: relative;
+            z-index: 1;     
+        }
+    .style-border-inner:before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: 0;
+        height: 15px;
+        width: 87%;
+        border-bottom: 1px solid #000;
+      }
+   </style>
+</head>
+<body> 
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div  class="card bg-primary px-3 m-3 style-border">
+                    <h3 class="text-white text-center justify-content-center mt-3 mb-3">TO DO LIST</h3>
+                    <div  class="text-center">    
+                        <div id="newTask" class="input-group mb-3" style="border-radius: 6px;">
+                            <input id="input" type="text" class="form-control" placeholder="What you want to do" aria-label="Recipient's username" aria-describedby="basic-addon2" size="30">
+                            <div class="input-group-append" >
+                                <button onclick="myFunction()" id="push" class="btn btn-outline-secondary text-white" type="button" style="border-color: white;">ADD</button>
+                            </div>
+                        </div>
+                    </div>    
+                    <div id="tasks" class="bg-light mt-3 mb-3" style="border-radius: 6px;min-height:50px;">
+                       
+                        <div class="text-center justify-content-center mt-3 mb-3">  
+                    </div>            
+                </div>
+                <div class="text-center mb-4">
+                    <button onclick="deleteAll()" style="background-color: red;border-color: black;color:white; border-radius: 6px;">DELETE ALL</button>  
+                </div>
+            </div>   
+            <div class="col-4"></div>
+        </div>
+    <script>
+
+
+    document.querySelector("#push").onclick = function(){
+        if(document.querySelector("#newTask input").value.length == 0){
+            alert("Add a task")
+        }else{
+            document.querySelector("#tasks").innerHTML += `<div class=" delete task style-border-inner col-12 d-flex justify-content-between mt-5 mb-3  mr-3" >
+                <button onclick="disable(this)" id="text1" style="background-color: transparent;border-color: transparent;"><div onclick="disable()" >   ${document.querySelector("#newTask input").value}</div></button>     
+                <button onclick="remove(this)" class="delete" style="background-color: transparent;border-color: transparent;"><span><i class="fa fa-trash text-danger" aria-hidden="true"></i></span></button>           
+            </div>`;
+        }
+    }
+
+
+    let tasks = document.querySelectorAll(".tasks");
+    for(let i = 0;i<= tasks.length; i++){
+        tasks[i].onclick = function(){
+            this.classList.toggle("completed");
+        }
+    }
+    document.querySelector("newTask input").value = "";
+
+
+
+    function remove(elem){
+        elem.parentNode.remove();
+    }
+
+    function disable(elem){  
+        elem.style.setProperty('text-decoration', 'line-through');
+        //   elem.remove();
+    }
+    
+       
+    function deleteAll(){
+        document.querySelector("#tasks").textContent = "";
+        
+    }
+
+
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="jscards.js"></script>
+</body>
+</html>

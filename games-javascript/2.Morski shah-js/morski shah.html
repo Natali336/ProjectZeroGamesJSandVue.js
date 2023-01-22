@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>index</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+		<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+		<style>
+			.new-style {
+				display: block;
+				color: black;
+				position: relative;
+			}
+			.new-style:after {
+				content: "";
+				background: lightcoral;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				height: 200%;
+				width: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4">
+					<div class="row">
+						<div class="col-12">
+							<div class="text-center m-5">
+								<!-- <span id="span-one">0</span>
+                <span>:</span>
+                <span id="span-two">0</span> -->
+							</div>
+
+							<div class="row align-items-center mt-5" style="border-bottom: 5px solid lightcoral">
+								<div class="col-4">
+									<button type="button" onclick="player(this)" id="1" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img1" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img2" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img3" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+								<div class="col-4">
+									<button type="button" onclick="player(this)" id="2" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img4" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img5" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img6" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+								<div class="col-4">
+									<button type="button" onclick="player(this)" id="3" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img7" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img8" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img9" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+							</div>
+
+							<div class="row align-items-center" style="border-bottom: 5px solid lightcoral">
+								<div class="col-4 new-style">
+									<button type="button" onclick="player(this)" id="4" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img10" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img11" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img12" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+								<div class="col-4 new-style">
+									<button type="button" onclick="player(this)" id="5" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img13" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img14" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img15" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+								<div class="col-4">
+									<button type="button" onclick="player(this)" id="6" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img16" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img17" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img18" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+							</div>
+							<div class="row align-items-center">
+								<div class="col-4 new-style">
+									<button type="button" onclick="player(this)" id="7" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img19" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img20" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img21" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+								<div class="col-4 new-style">
+									<button type="button" onclick="player(this)" id="8" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img22" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img23" src="images/o.png" alt="" style="display: none" /></button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img24" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+								<div class="col-4">
+									<button type="button" onclick="player(this)" id="9" style="background-color: transparent; border-color: transparent">
+										<img class="img-fluid" id="img25" src="images/white.jpg" alt="" />
+									</button>
+									<button type="button" style="background-color: transparent; border-color: transparent"><img class="img-fluid" id="img27" src="images/x.png" alt="" style="display: none" /></button>
+								</div>
+							</div>
+							<div class="text-center m-5">
+								<button onclick="continuePlay()" id="comp" style="display: inline-block; color: white; background-color: lightcoral; border-radius: 6px; border-color: white; cursor: pointer">
+									CONTINUE THE PLAY
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4"></div>
+			</div>
+		</div>
+		<script>
+			let btn = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+			let arrCells = ["img1", "img4", "img7", "img10", "img13", "img16", "img19", "img22", "img25"];
+			let arrResultX = ["img3", "img6", "img9", "img12", "img15", "img18", "img21", "img24", "img27"];
+			let arrResultO = ["img2", "img5", "img8", "img11", "img14", "img17", "img20", "img23", "img26"];
+
+			let i = 0;
+			function myFunction1(num) {
+				document.getElementById(arrCells[0]).style.display = "none";
+				document.getElementById(arrResultX[0]).style.display = "block";
+			}
+			function myFunction2(num) {
+				document.getElementById(arrCells[1]).style.display = "none";
+				document.getElementById(arrResultX[1]).style.display = "block";
+			}
+			function myFunction3(num) {
+				document.getElementById(arrCells[2]).style.display = "none";
+				document.getElementById(arrResultX[2]).style.display = "block";
+			}
+			function myFunction4(num) {
+				document.getElementById(arrCells[3]).style.display = "none";
+				document.getElementById(arrResultX[3]).style.display = "block";
+			}
+			function myFunction5(num) {
+				document.getElementById(arrCells[4]).style.display = "none";
+				document.getElementById(arrResultX[4]).style.display = "block";
+			}
+			function myFunction6(num) {
+				document.getElementById(arrCells[5]).style.display = "none";
+				document.getElementById(arrResultX[5]).style.display = "block";
+			}
+			function myFunction7(num) {
+				document.getElementById(arrCells[6]).style.display = "none";
+				document.getElementById(arrResultX[6]).style.display = "block";
+			}
+			function myFunction8(num) {
+				document.getElementById(arrCells[7]).style.display = "none";
+				document.getElementById(arrResultX[7]).style.display = "block";
+			}
+			function myFunction9(num) {
+				document.getElementById(arrCells[8]).style.display = "none";
+				document.getElementById(arrResultX[8]).style.display = "block";
+			}
+
+			function myFunction(button) {
+				debugger;
+				let x = button.id;
+				switch (x) {
+					case "1":
+						myFunction1(x);
+						break;
+					case "2":
+						myFunction2(x);
+						break;
+					case "3":
+						myFunction3(x);
+						break;
+					case "4":
+						myFunction4(x);
+						break;
+					case "5":
+						myFunction5(x);
+						break;
+					case "6":
+						myFunction6(x);
+						break;
+					case "7":
+						myFunction7(x);
+						break;
+					case "8":
+						myFunction8(x);
+						break;
+					case "9":
+						myFunction9(x);
+						break;
+					default:
+						return false;
+				}
+			}
+
+			function myFunctionTwo1(num) {
+				let i = 0;
+				document.getElementById(arrCells[0]).style.display = "none";
+				document.getElementById(arrResultO[0]).style.display = "block";
+			}
+
+			function myFunctionTwo2(num) {
+				document.getElementById(arrCells[1]).style.display = "none";
+				document.getElementById(arrResultO[1]).style.display = "block";
+			}
+
+			function myFunctionTwo3(num) {
+				document.getElementById(arrCells[2]).style.display = "none";
+				document.getElementById(arrResultO[2]).style.display = "block";
+			}
+			function myFunctionTwo4(num) {
+				document.getElementById(arrCells[3]).style.display = "none";
+				document.getElementById(arrResultO[3]).style.display = "block";
+			}
+			function myFunctionTwo5(num) {
+				document.getElementById(arrCells[4]).style.display = "none";
+				document.getElementById(arrResultO[4]).style.display = "block";
+			}
+			function myFunctionTwo6(num) {
+				document.getElementById(arrCells[5]).style.display = "none";
+				document.getElementById(arrResultO[5]).style.display = "block";
+			}
+			function myFunctionTwo7(num) {
+				document.getElementById(arrCells[6]).style.display = "none";
+				document.getElementById(arrResultO[6]).style.display = "block";
+			}
+			function myFunctionTwo8(num) {
+				document.getElementById(arrCells[7]).style.display = "none";
+				document.getElementById(arrResultO[7]).style.display = "block";
+			}
+			function myFunctionTwo9(num) {
+				document.getElementById(arrCells[8]).style.display = "none";
+				document.getElementById(arrResultO[8]).style.display = "block";
+			}
+
+			function myFunctionTwo(button) {
+				var x = button.id;
+				switch (x) {
+					case "1":
+						myFunctionTwo1(x);
+						break;
+					case "2":
+						myFunctionTwo2(x);
+						break;
+					case "3":
+						myFunctionTwo3(x);
+						break;
+					case "4":
+						myFunctionTwo4(x);
+						break;
+					case "5":
+						myFunctionTwo5(x);
+						break;
+					case "6":
+						myFunctionTwo6(x);
+						break;
+					case "7":
+						myFunctionTwo7(x);
+						break;
+					case "8":
+						myFunctionTwo8(x);
+						break;
+					case "9":
+						myFunctionTwo9(x);
+						break;
+					default:
+						return false;
+				}
+			}
+
+			let player1 = document.getElementById(arrResultX[i]).src;
+			let player2 = document.getElementById(arrResultO[i]).src;
+			let activePlayer = player1; // "file:///C:/Users/nataliya.pavlova/new-struct/JS%20training/images/x.png"
+			var clickCounter = 0;
+
+			let board = [
+				// horizontal O
+				["img3", "img6", "img9"],
+				["img12", "img15", "img18"],
+				["img21", "img24", "img27"],
+				// vertical O
+				["img3", "img12", "img21"],
+				["img6", "img15", "img24"],
+				["9", "18", "27"],
+				// diagonal O
+				["img3", "img15", "img27"],
+				["img9", "img15", "img21"],
+
+				// horizontal X
+				["img2", "img5", "img8"],
+				["img11", "img14", "img17"],
+				["img20", "img23", "img26"],
+				// vertical X
+				["img2", "img11", "img20"],
+				["img5", "img14", "img23"],
+				["img8", "img17", "img26"],
+				// diagonal X
+				["img2", "img14", "img26"],
+				["img8", "img14", "img20"],
+			];
+
+			function result() {
+				if (
+					(document.getElementById(board[0][0]).style.display == "block" &&
+						document.getElementById(board[0][1]).style.display == "block" &&
+						document.getElementById(board[0][2]).style.display == "block") ||
+					(document.getElementById(board[1][0]).style.display == "block" &&
+						document.getElementById(board[1][1]).style.display == "block" &&
+						document.getElementById(board[1][2]).style.display == "block") ||
+					(document.getElementById(board[2][0]).style.display == "block" &&
+						document.getElementById(board[2][1]).style.display == "block" &&
+						document.getElementById(board[2][2]).style.display == "block") ||
+					(document.getElementById(board[3][0]).style.display == "block" &&
+						document.getElementById(board[3][1]).style.display == "block" &&
+						document.getElementById(board[3][2]).style.display == "block") ||
+					(document.getElementById(board[4][0]).style.display == "block" &&
+						document.getElementById(board[4][1]).style.display == "block" &&
+						document.getElementById(board[4][2]).style.display == "block") ||
+					(document.getElementById(board[5][0]).style.display == "block" &&
+						document.getElementById(board[5][1]).style.display == "block" &&
+						document.getElementById(board[5][2]).style.display == "block") ||
+					(document.getElementById(board[6][0]).style.display == "block" &&
+						document.getElementById(board[6][1]).style.display == "block" &&
+						document.getElementById(board[6][2]).style.display == "block") ||
+					(document.getElementById(board[7][0]).style.display == "block" &&
+						document.getElementById(board[7][1]).style.display == "block" &&
+						document.getElementById(board[7][2]).style.display == "block")
+				) {
+					alert("Player X won!");
+				} else if (
+					(document.getElementById(board[8][0]).style.display == "block" &&
+						document.getElementById(board[8][1]).style.display == "block" &&
+						document.getElementById(board[8][2]).style.display == "block") ||
+					(document.getElementById(board[9][0]).style.display == "block" &&
+						document.getElementById(board[9][1]).style.display == "block" &&
+						document.getElementById(board[9][2]).style.display == "block") ||
+					(document.getElementById(board[10][0]).style.display == "block" &&
+						document.getElementById(board[10][1]).style.display == "block" &&
+						document.getElementById(board[10][2]).style.display == "block") ||
+					(document.getElementById(board[11][0]).style.display == "block" &&
+						document.getElementById(board[11][1]).style.display == "block" &&
+						document.getElementById(board[11][2]).style.display == "block") ||
+					(document.getElementById(board[12][0]).style.display == "block" &&
+						document.getElementById(board[12][1]).style.display == "block" &&
+						document.getElementById(board[12][2]).style.display == "block") ||
+					(document.getElementById(board[13][0]).style.display == "block" &&
+						document.getElementById(board[13][1]).style.display == "block" &&
+						document.getElementById(board[13][2]).style.display == "block") ||
+					(document.getElementById(board[14][0]).style.display == "block" &&
+						document.getElementById(board[14][1]).style.display == "block" &&
+						document.getElementById(board[14][2]).style.display == "block") ||
+					(document.getElementById(board[15][0]).style.display == "block" &&
+						document.getElementById(board[15][1]).style.display == "block" &&
+						document.getElementById(board[15][2]).style.display == "block")
+				) {
+					alert("Player O won!");
+				}
+			}
+
+			function player(button) {
+				debugger;
+				let unclickedButton = document.getElementById(arrCells[i]).src;
+				let clickedButton = document.getElementById(arrResultX[i]);
+				clickedButton.src = activePlayer;
+				clickCounter++;
+				if ((activePlayer === player1 && activePlayer !== unclickedButton && clickCounter == 1) || clickCounter == 3 || clickCounter == 5 || clickCounter == 7 || clickCounter == 9) {
+					myFunction(button);
+				} else if ((activePlayer === player1 && activePlayer !== unclickedButton && clickCounter == 2) || clickCounter == 4 || clickCounter == 6 || clickCounter == 8) {
+					myFunctionTwo(button);
+				}
+				result();
+				draw();
+			}
+
+			function draw() {
+				if (clickCounter == 9 && !result()) {
+					alert("Draw");
+				}
+			}
+
+			function continuePlay() {
+				window.location.reload(true);
+			}
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+		<script src="jscards.js"></script>
+	</body>
+</html>

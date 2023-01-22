@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>index</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+		<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+		<link href="stylecards.css" rel="stylesheet" />
+		<style>
+			.card {
+				background-color: darkgrey;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-4"></div>
+
+				<div class="col-4">
+					<div class="card px-3 m-3">
+						<div class="col-12 d-flex justify-content-between mt-5 mb-3 ml-3 mr-3">
+							<label>Amount</label>
+							<span class="input-style">
+								<span>$</span>
+								<input type="number" id="amount" name="amount" min="0" max="100" />
+							</span>
+						</div>
+
+						<!-- range start -->
+						<div class="col-12 d-flex justify-content-between m-3">
+							<label id="lbl">Tip%</label>
+
+							<span id="tippercent">0</span>
+							<input id="tip" onchange="newValue()" type="range" min="0" max="100" value="15" />
+						</div>
+						<!-- range end -->
+
+						<div class="col-12 d-flex justify-content-between m-3">
+							<label>Tip</label>
+							<span class="input-style">
+								<span>$</span>
+								<input type="number" id="tipAmount" name="quantity" min="0" max="100" value="0" />
+							</span>
+						</div>
+						<div class="col-12 d-flex justify-content-between m-3">
+							<label>Total</label>
+							<span class="input-style">
+								<span>$</span>
+								<input type="number" id="total" class="val" name="total" min="0" max="100" value="" />
+							</span>
+						</div>
+						<div class="col-12 d-flex justify-content-between m-3">
+							<form>
+								<input type="button" value="Calculate" onclick="calculateTip()" />
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-4"></div>
+				<script>
+					//   Kалкулаторът изчислява Amount плюс Tip,което дава Total,като процентът,
+					//   който Tip представлява от Amount се изчислява и се изписва в Tip%.
+					function newValue() {
+						let amount = document.getElementById("amount").value;
+						let tipPercent = document.getElementById("tip").value;
+
+						document.getElementById("tippercent").textContent = tipPercent;
+						let tip = (parseInt(tipPercent) / 100) * parseInt(amount);
+						document.getElementById("tipAmount").value = parseInt(tip);
+
+						// let tipAmountInput = document.getElementById("tipAmount");
+						// let amount = document.getElementById("amount").value;
+						// let tipAmount = document.getElementById("tipAmount").value;
+						// let percent = (parseInt(tipAmount)/parseInt(amount)) * 100;
+						// document.getElementById("tip").value = percent;
+						// document.getElementById("tippercent").textContent = percent;
+					}
+					function calculateTip() {
+						// let amount = document.getElementById("amount").value;    //5
+						// let tipAmount = document.getElementById("tipAmount").value;  //2
+						// let tipAmountInput = document.getElementById("tipAmount");
+						// debugger;
+
+						// let total = parseInt(amount) + parseInt(tipAmount);    //7
+						// document.getElementById("total").value = total;
+						// let sliderInput = document.getElementById("tip");
+						// let percent = (parseInt(tipAmount)/parseInt(amount)) * 100;   //40
+
+						let amount = document.getElementById("amount").value;
+						let newResult = document.getElementById("tipAmount").value;
+
+						// let tip = (parseInt(tipPercent)/100)*parseInt(amount);
+						// document.getElementById("tipAmount").value = tip;
+						document.getElementById("total").value = parseInt(newResult) + parseInt(amount);
+					}
+				</script>
+			</div>
+		</div>
+
+		<!-- 2ri variant e v nezakomentiraniq kod: a imenno:
+        izbirame primerno 5 za suma i iztegliame range da stane 12% ot 5 iskame da da dem bakshish,
+        v tip se izchisliava stoinostta na bakshisha i v total se presmiata sumata mevdu bakshisha i nachalnata suma -->
+                <!-- kolko e 12 % ot sumata5   = 0.6
+
+        (12/100)x5 -->
+                <!-- restoto = (tip/100)*amount
+        total = restoto + amount -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+		<script src="jscards.js"></script>
+	</body>
+</html>
